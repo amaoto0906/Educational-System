@@ -17,7 +17,9 @@ COPY . .
 
 # 依存インストール (本番用) + アプリkey生成
 # lock が古い場合に備え install 失敗時は update でフォールバック
-RUN (composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
+# storage のキャッシュ用サブディレクトリを確実に作成 (view:clear が依存)
+RUN mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
+    && (composer install --no-dev --optimize-autoloader --no-interaction --no-progress \
     || composer update --no-dev --optimize-autoloader --no-interaction --no-progress) \
     && cp -n .env.example .env \
     && php artisan key:generate --force \
@@ -29,4 +31,7 @@ ENV PORT=8000
 EXPOSE 8000
 
 # プロキシ配下のHTTPSで動くようキャッシュをクリアして起動
-CMD php artisan config:clear && php artisan view:clear && php artisan serve --host=0.0.0.0 --port=${PORT}
+CMD mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views \
+    && php artisan config:clear \
+    && php artisan view:clear \
+    && php artisan serve --host=0.0.0.0 --port=${PORT}
