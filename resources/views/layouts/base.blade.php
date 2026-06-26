@@ -18,7 +18,7 @@
             </a>
             <nav class="flex items-center gap-2">
                 <a href="{{ route('roadmap') }}" class="btn-ghost hidden sm:inline-flex">ロードマップ</a>
-                <a href="{{ route('login') }}" class="btn-primary">ログイン</a>
+                <a href="{{ route('portal') }}" class="btn-primary">ログイン</a>
             </nav>
         </div>
     </header>

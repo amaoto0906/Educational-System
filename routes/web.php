@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'landing'])->name('landing');
 Route::get('/roadmap', [PageController::class, 'roadmap'])->name('roadmap');
 
+// ===== ログイン入口 (ロール選択) =====
+Route::get('/portal', [PageController::class, 'portal'])->name('portal');
+
 // ===== 認証 (受講生) =====
 Route::get('/login', [DemoAuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [DemoAuthController::class, 'login'])->name('login.post');

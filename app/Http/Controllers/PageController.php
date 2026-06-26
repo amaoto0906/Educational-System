@@ -9,6 +9,11 @@ class PageController extends Controller
         return view('landing');
     }
 
+    public function portal()
+    {
+        return view('auth.portal');
+    }
+
     public function roadmap()
     {
         $phases = [
