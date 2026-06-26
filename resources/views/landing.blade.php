@@ -8,26 +8,53 @@
         <div class="absolute inset-0 opacity-[0.07]"
              style="background-image:radial-gradient(circle at 15% 20%, #4f46e5 1px, transparent 1px); background-size:26px 26px;"></div>
         <div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-            <span class="badge bg-brand-50 text-brand-700 ring-1 ring-brand-200">
-                <x-icon name="rocket" class="h-3.5 w-3.5" />
-                資格・就活対策のオンライン学習プラットフォーム
-            </span>
-            <h1 class="mt-5 max-w-3xl text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
-                学生が迷わず学べる、<br class="hidden sm:block">わかりやすい学習マイページ
-            </h1>
-            <p class="mt-5 max-w-2xl text-lg text-slate-600">
-                講義動画・教材・復習テスト・模試まで、合格に必要な学習をひとつのマイページで。
-                いつでも、どこでも、自分のペースで進められます。
-            </p>
-            <div class="mt-8 flex flex-wrap items-center gap-3">
-                <a href="{{ route('login') }}" class="btn-primary">
-                    <x-icon name="logout" class="h-5 w-5 rotate-180" />
-                    受講生ログイン
-                </a>
-                <a href="{{ route('roadmap') }}" class="btn-secondary">
-                    <x-icon name="layers" class="h-5 w-5" />
-                    今後の計画を見る
-                </a>
+            <div class="grid items-center gap-6 lg:grid-cols-2">
+                <div>
+                    <span class="badge bg-brand-50 text-brand-700 ring-1 ring-brand-200">
+                        <x-icon name="rocket" class="h-3.5 w-3.5" />
+                        資格・就活対策のオンライン学習プラットフォーム
+                    </span>
+                    <h1 class="mt-5 max-w-3xl text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+                        学生が迷わず学べる、<br class="hidden sm:block">わかりやすい学習マイページ
+                    </h1>
+                    <p class="mt-5 max-w-2xl text-lg text-slate-600">
+                        講義動画・教材・復習テスト・模試まで、合格に必要な学習をひとつのマイページで。
+                        いつでも、どこでも、自分のペースで進められます。
+                    </p>
+                    <div class="mt-8 flex flex-wrap items-center gap-3">
+                        <a href="{{ route('login') }}" class="btn-primary">
+                            <x-icon name="logout" class="h-5 w-5 rotate-180" />
+                            受講生ログイン
+                        </a>
+                        <a href="{{ route('roadmap') }}" class="btn-secondary">
+                            <x-icon name="layers" class="h-5 w-5" />
+                            今後の計画を見る
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="card overflow-hidden bg-white p-3"
+                         style="border-radius:24px; box-shadow:0 24px 60px -32px rgba(15,23,42,.55);">
+                        <x-demo-image
+                            file="learning-dashboard.png"
+                            alt="受講生マイページの学習進捗ダッシュボード"
+                            class="w-full"
+                            style="aspect-ratio:4/3; object-fit:cover; border-radius:16px;"
+                        />
+                    </div>
+                    <div class="absolute bottom-4 left-3 rounded-xl bg-white/90 p-3 shadow-soft ring-1 ring-slate-200">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+                                <x-icon name="check" class="h-5 w-5" />
+                            </span>
+                            <div>
+                                <div class="text-sm font-bold text-slate-900">進捗がひと目でわかる</div>
+                                <div class="text-xs text-slate-500">動画・教材・テストを一画面に集約</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

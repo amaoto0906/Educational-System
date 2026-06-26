@@ -20,3 +20,5 @@ yarn-error.log
 /.vscode
 /.nova
 /.zed
+
+/tailwindcss.exe

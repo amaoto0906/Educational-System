@@ -22,6 +22,15 @@
             </div>
             <h2 class="max-w-md text-3xl font-bold leading-snug">学生が迷わず学べる、<br>軽量・高速・堅牢なマイページ。</h2>
             <p class="mt-4 max-w-md text-brand-100">動画講義から復習テスト・模試まで。学習に必要なすべてを、ひとつのマイページで。いつでも、どこでも、自分のペースで。</p>
+            <div class="mt-8 max-w-md overflow-hidden rounded-2xl bg-white/10 p-3 ring-1 ring-white"
+                 style="box-shadow:0 24px 70px -34px rgba(0,0,0,.7);">
+                <x-demo-image
+                    file="secure-login.png"
+                    alt="ログイン保護とデモアカウント入力を備えた画面"
+                    class="w-full"
+                    style="aspect-ratio:4/3; object-fit:cover; border-radius:14px;"
+                />
+            </div>
             <div class="mt-10 flex flex-wrap gap-2">
                 @foreach (['動画講義','復習テスト','模試対策','進捗管理'] as $t)
                     <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-medium backdrop-blur">{{ $t }}</span>

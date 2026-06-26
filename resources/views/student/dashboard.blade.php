@@ -18,6 +18,48 @@
 <x-page-header :title="$userName . ' さん、おかえりなさい'"
     :description="$course . ' の学習状況です。今日も一歩ずつ進めましょう。'" />
 
+{{-- 今日の学習ナビ --}}
+<div class="mb-6 grid gap-6 lg:grid-cols-3">
+    <div class="card p-5 lg:col-span-2">
+        <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0">
+                <span class="badge bg-brand-50 text-brand-700 ring-1 ring-brand-200">今日のおすすめ</span>
+                <h2 class="mt-3 text-xl font-bold text-slate-900">復習テストまで一気に進められます</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-500">
+                    動画視聴、教材確認、復習テスト、模試アカウントをこの画面から確認できます。
+                    進捗を見ながら、次に必要な学習だけを迷わず選べます。
+                </p>
+            </div>
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-600">
+                <x-icon name="bolt" class="h-6 w-6" />
+            </span>
+        </div>
+        <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-xl border border-brand-100 bg-brand-50/50 p-3">
+                <p class="text-xs font-medium text-brand-600">学習進捗</p>
+                <p class="mt-1 text-2xl font-bold text-slate-900">{{ $progress }}%</p>
+            </div>
+            <div class="rounded-xl border border-emerald-100 bg-emerald-50/50 p-3">
+                <p class="text-xs font-medium text-emerald-600">教材</p>
+                <p class="mt-1 text-2xl font-bold text-slate-900">{{ (int) ($stats['materials'] ?? 0) }}件</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-amber-50 p-3 ring-1 ring-amber-200">
+                <p class="text-xs font-medium text-amber-600">未完了テスト</p>
+                <p class="mt-1 text-2xl font-bold text-slate-900">{{ (int) ($stats['tests_incomplete'] ?? 0) }}件</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card overflow-hidden bg-white p-3">
+        <x-demo-image
+            file="student-progress.png"
+            alt="受講生の学習進捗を示すグラフィック"
+            class="w-full"
+            style="aspect-ratio:4/3; object-fit:cover; border-radius:14px;"
+        />
+    </div>
+</div>
+
 {{-- 統計カード群 --}}
 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
     <div class="card p-5">

@@ -1,12 +1,20 @@
-# Render.com Blueprint — GitHub連携で「Blueprint」からこのファイルを読み込むと自動デプロイ
+# Render.com Blueprint — GitHub連携で「New → Blueprint」からこのファイルを読み込むと自動デプロイ
 services:
   - type: web
     name: n1-monolith-demo
     runtime: docker
     plan: free
+    region: singapore
     autoDeploy: true
+    healthCheckPath: /
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: "false"
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: SESSION_DRIVER
+        value: file
+      - key: SESSION_SECURE_COOKIE
+        value: "true"
